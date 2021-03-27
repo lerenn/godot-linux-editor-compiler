@@ -22,4 +22,4 @@ export BINARY_BASE_DIR=/output
 source /usr/src/emsdk/emsdk_env.sh
 
 # Execute script
-bash /docker/scripts/godot-compiler.sh ${GODOT_SRC_CODE}
+nice -n 19 bash /docker/scripts/godot-compiler.sh ${GODOT_SRC_CODE}

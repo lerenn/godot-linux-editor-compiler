@@ -48,7 +48,7 @@ linux-install:
 	mkdir -p $(ICON_INSTALL_PATH)
 	cp -rf $(ICON_PATH)/$(ICON_NAME) $(ICON_INSTALL_PATH)
 	# Install shortcut
-	cp -f $(SHORTCUT_PATH) output
-	sed -i "s|Exec=.*|Exec=$(EDITOR_INSTALL_PATH)/$(EDITOR_NAME) %f|" output/$(SHORTCUT_NAME)
-	sed -i "s|Icon=.*|Icon=$(ICON_INSTALL_PATH)/$(ICON_NAME)|" output/$(SHORTCUT_NAME)
-	cp -f output/$(SHORTCUT_NAME) $(SHORTCUT_INSTALL_PATH)
+	cp -f $(SHORTCUT_PATH) output/$(VERSION)/
+	sed -i "s|Exec=.*|Exec=$(EDITOR_INSTALL_PATH)/$(EDITOR_NAME) %f|" output/$(VERSION)/$(SHORTCUT_NAME)
+	sed -i "s|Icon=.*|Icon=$(ICON_INSTALL_PATH)/$(ICON_NAME)|" output/$(VERSION)/$(SHORTCUT_NAME)
+	cp -f output/$(VERSION)/$(SHORTCUT_NAME) $(SHORTCUT_INSTALL_PATH)

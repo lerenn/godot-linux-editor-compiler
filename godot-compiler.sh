@@ -61,6 +61,10 @@ done
 ################################################################################
 
 echo "# Compile and install export templates for Android"
+
+# Set variables if not set
+if [ -z "${ANDROID_SDK_ROOT}" ]; then ANDROID_SDK_ROOT=""; fi
+
 # Release mode
 scons -j${THREADS} platform=android target=release android_arch=armv7
 scons -j${THREADS} platform=android target=release android_arch=arm64v8
